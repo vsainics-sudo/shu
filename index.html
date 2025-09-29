@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Shubhi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #4a2c2a;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #d81e5b;
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: popIn 1.5s ease forwards;
+            opacity: 0;
+        }
+        h1::before {
+            content: '💖 ';
+        }
+        p, h2 {
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards;
+            animation-delay: 1.5s;
+        }
+        p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        h2 {
+            color: #d81e5b;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        li {
+            margin: 15px 0;
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(216, 30, 91, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: default;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards;
+        }
+        li:nth-child(1) {
+            animation-delay: 2.5s;
+        }
+        li:nth-child(2) {
+            animation-delay: 3s;
+        }
+        li:nth-child(3) {
+            animation-delay: 3.5s;
+        }
+        li:hover {
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 0 12px 20px rgba(216, 30, 91, 0.6);
+            background: #fff0f6;
+        }
+        #intro-screen {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #enter-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 30px;
+            background-color: #d81e5b;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(216, 30, 91, 0.6);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            outline: none;
+            user-select: none;
+            animation: pulse 2s infinite;
+        }
+        #enter-btn:hover {
+            background-color: #a71d47;
+            transform: scale(1.05);
+        }
+        #enter-btn:active {
+            transform: scale(0.95);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            80% {
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 8px 20px rgba(216, 30, 91, 0.6);
+            }
+            50% {
+                box-shadow: 0 12px 30px rgba(216, 30, 91, 0.9);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="intro-screen">
+        <button id="enter-btn">
+            Click to Enter
+        </button>
+    </div>
+
+    <div id="content" style="display: none; text-align: center; padding: 50px;">
+        <h1>Thank You, Shubhi!</h1>
+        <p>Dear Shubhi, thank you for being my best friend and always being there for me. Your presence in my life means the world to me.</p>
+        <h2>Your Amazing Qualities:</h2>
+        <ul>
+            <li>Your beautiful smile that lights up any room.</li>
+            <li>Your good nature that makes everyone feel welcome and loved.</li>
+            <li>Your willingness to help me whenever I need it.</li>
+        </ul>
+        <p>I'm so grateful to have you as my best friend!</p>
+    </div>
+
+    <script>
+        const enterBtn = document.getElementById('enter-btn');
+        const introScreen = document.getElementById('intro-screen');
+        const content = document.getElementById('content');
+
+        enterBtn.addEventListener('click', () => {
+            introScreen.style.animation = 'fadeOutUp 1s forwards';
+            setTimeout(() => {
+                introScreen.style.display = 'none';
+                content.style.display = 'block';
+                content.style.opacity = 0;
+                content.style.animation = 'fadeInUp 1.5s forwards';
+            }, 1000);
+        });
+    </script>
+
+    <style>
+        @keyframes fadeOutUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+        }
+    </style>
+</body>
+</html>
